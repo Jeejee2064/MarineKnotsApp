@@ -34,12 +34,12 @@ const MarineKnotsWebsite = () => {
     {
       name: "Sylvie Mattelon",
       rating: 5,
-      text: "Finally, a simple and accurate app 👍 Whether it’s a refresher or a deep dive, some knots no longer hold any secrets for me — and it really makes life easier on our sailboat ⛵️ I highly recommend it ✨️ 🙏"
+      text: "Finally, a simple and accurate app 👍 Whether it is a refresher or a deep dive, some knots no longer hold any secrets for me — and it really makes life easier on our sailboat ⛵️ I highly recommend it ✨️ 🙏"
     },
     {
       name: "Johan Minio",
       rating: 5,
-      text: "An essential app no matter the sailor’s level. Smooth, fast, and very easy to understand."
+      text: "An essential app no matter the sailor is level. Smooth, fast, and very easy to understand."
     },
     {
       name: "Juliette Dolley",
@@ -49,7 +49,7 @@ const MarineKnotsWebsite = () => {
     {
       name: "Les Ecumeurs",
       rating: 5,
-      text: "It's clear, clean, and efficient. The animations are perfect and let you visualize each knot step by step. A search system is also included, helping you find the best knot for your needs! In short, a great little app that’s staying on my phone!"
+      text: "It is clear, clean, and efficient. The animations are perfect and let you visualize each knot step by step. A search system is also included, helping you find the best knot for your needs! In short, a great little app that’s staying on my phone!"
     }
   ];
 
@@ -205,7 +205,7 @@ const MarineKnotsWebsite = () => {
                   </div>
                   <span className="text-[#283061] text-sm">{review.rating}/5</span>
                 </div>
-                <p className="text-[#283061] mb-4 italic">"{review.text}"</p>
+                <p className="text-[#283061] mb-4 italic">{review.text}</p>
                 <div className="flex items-center">
                   <div className="w-10 h-10 bg-[#ffc107] rounded-full flex items-center justify-center mr-3">
                     <Users className="w-5 h-5 text-[#283061]" />
