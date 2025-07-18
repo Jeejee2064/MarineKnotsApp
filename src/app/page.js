@@ -63,7 +63,7 @@ const MarineKnotsWebsite = () => {
               <div className="flex items-center justify-center">
                 <Image src="/icon.png" alt="Marine Knots Icon" width={48} height={48} />
               </div>
-              <h1 className="text-2xl font-bold text-white" style={{ fontFamily: 'Pacifico, cursive' }}>
+              <h1 className="text-2xl text-white" style={{ fontFamily: 'Pacifico, cursive' }}>
                 Marine Knots
               </h1>
             </div>
@@ -85,7 +85,7 @@ const MarineKnotsWebsite = () => {
               <div className="flex items-center justify-center mx-auto mb-6">
                 <Image src="/icon.png" alt="Marine Knots Icon" width={96} height={96} />
               </div>
-              <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight" style={{ fontFamily: 'Pacifico, cursive' }}>
+              <h2 className="text-5xl md:text-6xl text-white mb-6 leading-tight" style={{ fontFamily: 'Pacifico, cursive' }}>
                 Master the Art of 
                 <span className="text-[#ffc107] block">Maritime Knots</span>
               </h2>
