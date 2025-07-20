@@ -1,11 +1,43 @@
 'use client'
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { ChevronDown, ChevronUp, Star, Anchor, Navigation, BookOpen, Target, Users, Award } from 'lucide-react';
 import Image from 'next/image';
 
 const MarineKnotsWebsite = () => {
   const [showTerms, setShowTerms] = useState(false);
   const [showPrivacy, setShowPrivacy] = useState(false);
+
+  // Smooth scroll function
+  const smoothScrollTo = (targetId) => {
+    const element = document.getElementById(targetId);
+    if (element) {
+      const headerOffset = 80; // Account for fixed header
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  // Animation variants
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 60 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
 
   const features = [
     {
@@ -49,59 +81,133 @@ const MarineKnotsWebsite = () => {
     {
       name: "Les Ecumeurs",
       rating: 5,
-      text: "It is clear, clean, and efficient. The animations are perfect and let you visualize each knot step by step. A search system is also included, helping you find the best knot for your needs! In short, a great little app that’s staying on my phone!"
+      text: "It is clear, clean, and efficient. The animations are perfect and let you visualize each knot step by step. A search system is also included, helping you find the best knot for your needs! In short, a great little app that's staying on my phone!"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white" style={{ scrollBehavior: 'smooth' }}>
       {/* Header */}
-      <header className="bg-[#283061] border-b-4 border-[#ffc107] sticky top-0 z-50">
+      <motion.header 
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="bg-[#283061] border-b-4 border-[#fff] sticky top-0 z-50"
+      >
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
+            <motion.div 
+              className="flex items-center space-x-4"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               <div className="flex items-center justify-center">
                 <Image src="/icon.png" alt="Marine Knots Icon" width={48} height={48} />
               </div>
               <h1 className="text-2xl text-white" style={{ fontFamily: 'Pacifico, cursive' }}>
                 Marine Knots
               </h1>
-            </div>
-            <nav className="hidden md:flex space-x-8">
-              <a href="#features" className="text-white hover:text-[#ffc107] transition-colors">Features</a>
-              <a href="#screenshots" className="text-white hover:text-[#ffc107] transition-colors">Screenshots</a>
-              <a href="#reviews" className="text-white hover:text-[#ffc107] transition-colors">Reviews</a>
-              <a href="#download" className="text-white hover:text-[#ffc107] transition-colors">Download</a>
-            </nav>
+            </motion.div>
+            <motion.nav 
+              className="hidden md:flex space-x-8"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <button 
+                onClick={() => smoothScrollTo('features')} 
+                className="text-white hover:text-[#ffc107] transition-colors cursor-pointer"
+              >
+                Features
+              </button>
+              <button 
+                onClick={() => smoothScrollTo('screenshots')} 
+                className="text-white hover:text-[#ffc107] transition-colors cursor-pointer"
+              >
+                Screenshots
+              </button>
+              <button 
+                onClick={() => smoothScrollTo('reviews')} 
+                className="text-white hover:text-[#ffc107] transition-colors cursor-pointer"
+              >
+                Reviews
+              </button>
+              <button 
+                onClick={() => smoothScrollTo('download')} 
+                className="text-white hover:text-[#ffc107] transition-colors cursor-pointer"
+              >
+                Download
+              </button>
+            </motion.nav>
           </div>
         </div>
-      </header>
+      </motion.header>
 
       {/* Hero Section */}
       <section className="bg-[#283061] py-20 px-6">
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="mb-8">
-              <div className="flex items-center justify-center mx-auto mb-6">
-                <Image src="/icon.png" alt="Marine Knots Icon" width={96} height={96} />
-              </div>
-              <h2 className="text-5xl md:text-6xl text-white mb-6 leading-tight" style={{ fontFamily: 'Pacifico, cursive' }}>
+            <motion.div 
+              className="mb-8"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={staggerContainer}
+            >
+              <motion.div 
+                className="flex items-center justify-center mx-auto mb-6"
+                variants={fadeInUp}
+                transition={{ duration: 0.6 }}
+              >
+                <Image src="/icon.png" alt="Marine Knots Icon" width={200} height={200} />
+              </motion.div>
+              <motion.h2 
+                className="text-5xl md:text-6xl text-white mb-6 leading-tight" 
+                style={{ fontFamily: 'Pacifico, cursive' }}
+                variants={fadeInUp}
+                transition={{ duration: 0.6 }}
+              >
                 Master the Art of 
-                <span className="text-[#ffc107] block">Maritime Knots</span>
-              </h2>
-              <p className="text-xl text-white mb-8 max-w-2xl mx-auto leading-relaxed">
+                <span className="text-[#ffc107] block">Marine Knots</span>
+              </motion.h2>
+              <motion.p 
+                className="text-xl text-white mb-8 max-w-2xl mx-auto leading-relaxed"
+                variants={fadeInUp}
+                transition={{ duration: 0.6 }}
+              >
                 Welcome to the world of maritime knots! Don't let the first challenge stop you when it comes to tying knots. 
                 With our dedicated 100% offline app for boaters, master over 45 marine knots step-by-step.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://apps.apple.com/us/app/marine-knots/id6451214846" className="bg-[#ffc107] text-[#283061] px-8 py-4 rounded-full font-semibold text-lg hover:opacity-90 transition-opacity shadow-lg">
+              </motion.p>
+            </motion.div>
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={staggerContainer}
+            >
+              <motion.a 
+                href="https://apps.apple.com/us/app/marine-knots/id6451214846" 
+                className="bg-[#ffc107] text-[#283061] px-8 py-4 rounded-full font-semibold text-lg hover:opacity-90 transition-opacity shadow-lg"
+                variants={fadeInUp}
+                transition={{ duration: 0.6 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 Download for iOS
-              </a>
-              <a href="https://play.google.com/store/apps/details?id=com.Noeuds.NoeudsMarins&hl=en_US" className="bg-white text-[#283061] px-8 py-4 rounded-full font-semibold text-lg hover:opacity-90 transition-opacity shadow-lg border-2 border-white">
+              </motion.a>
+              <motion.a 
+                href="https://play.google.com/store/apps/details?id=com.Noeuds.NoeudsMarins&hl=en_US" 
+                className="bg-white text-[#283061] px-8 py-4 rounded-full font-semibold text-lg hover:opacity-90 transition-opacity shadow-lg border-2 border-white"
+                variants={fadeInUp}
+                transition={{ duration: 0.6 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 Download for Android
-              </a>
-            </div>
+              </motion.a>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -109,94 +215,213 @@ const MarineKnotsWebsite = () => {
       {/* Features Section */}
       <section id="features" className="py-20 px-6 bg-white">
         <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold text-[#283061] mb-6">Why Choose Marine Knots?</h3>
-            <p className="text-xl text-[#283061] max-w-3xl mx-auto">
+          <motion.div 
+            className="text-center mb-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.h3 
+              className="text-4xl font-bold text-[#283061] mb-6"
+              variants={fadeInUp}
+              transition={{ duration: 0.6 }}
+            >
+              Why Choose Marine Knots?
+            </motion.h3>
+            <motion.p 
+              className="text-xl text-[#283061] max-w-3xl mx-auto"
+              variants={fadeInUp}
+              transition={{ duration: 0.6 }}
+            >
               Specially designed to help you learn marine knots in an easy and interactive way, 
               with animated instructions and practical scenarios.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            </motion.p>
+          </motion.div>
+          <motion.div 
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
             {features.map((feature, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 text-center hover:shadow-lg transition-shadow border-2 border-[#283061]">
+              <motion.div 
+                key={index} 
+                className="bg-white rounded-2xl p-8 text-center hover:shadow-lg transition-shadow border-2 border-[#283061]"
+                variants={fadeInUp}
+                transition={{ duration: 0.6 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+              >
                 <div className="text-[#ffc107] mb-4 flex justify-center">
                   {feature.icon}
                 </div>
                 <h4 className="text-xl font-semibold text-[#283061] mb-4">{feature.title}</h4>
                 <p className="text-[#283061]">{feature.description}</p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* New Features Highlight */}
       <section className="py-20 px-6 bg-[#283061]">
         <div className="container mx-auto">
-          <div className="bg-white rounded-3xl p-12 border-4 border-[#ffc107]">
-            <div className="text-center mb-12">
+          <motion.div 
+            className="bg-white rounded-3xl p-12 border-4 border-[#ffc107]"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
+            transition={{ duration: 0.8 }}
+          >
+            <motion.div 
+              className="text-center mb-12"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={fadeInUp}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               <h3 className="text-4xl font-bold text-[#283061] mb-6">New Features</h3>
-            </div>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
+            </motion.div>
+            <motion.div 
+              className="grid md:grid-cols-3 gap-8"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={staggerContainer}
+            >
+              <motion.div 
+                className="text-center"
+                variants={fadeInUp}
+                transition={{ duration: 0.6 }}
+              >
                 <div className="w-16 h-16 bg-[#ffc107] rounded-full flex items-center justify-center mx-auto mb-4">
                   <Target className="w-8 h-8 text-[#283061]" />
                 </div>
                 <h4 className="text-xl font-semibold text-[#283061] mb-4">Quiz Modes</h4>
                 <p className="text-[#283061]">Test your knowledge with interactive quizzes and get instant feedback</p>
-              </div>
-              <div className="text-center">
+              </motion.div>
+              <motion.div 
+                className="text-center"
+                variants={fadeInUp}
+                transition={{ duration: 0.6 }}
+              >
                 <div className="w-16 h-16 bg-[#ffc107] rounded-full flex items-center justify-center mx-auto mb-4">
                   <Navigation className="w-8 h-8 text-[#283061]" />
                 </div>
                 <h4 className="text-xl font-semibold text-[#283061] mb-4">Maritime Scenarios</h4>
                 <p className="text-[#283061]">Over 45 real-world situations where you choose the right knot</p>
-              </div>
-              <div className="text-center">
+              </motion.div>
+              <motion.div 
+                className="text-center"
+                variants={fadeInUp}
+                transition={{ duration: 0.6 }}
+              >
                 <div className="w-16 h-16 bg-[#ffc107] rounded-full flex items-center justify-center mx-auto mb-4">
                   <Award className="w-8 h-8 text-[#283061]" />
                 </div>
                 <h4 className="text-xl font-semibold text-[#283061] mb-4">Knot Selection</h4>
                 <p className="text-[#283061]">Get guidance on choosing the most appropriate knot for your needs</p>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* Screenshots Section */}
       <section id="screenshots" className="py-20 px-6 bg-white">
         <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold text-[#283061] mb-6">App Screenshots</h3>
-            <p className="text-xl text-[#283061]">Take a look at our intuitive and user-friendly interface</p>
-          </div>
-          <div className="grid md:grid-cols-4 gap-8">
+          <motion.div 
+            className="text-center mb-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.h3 
+              className="text-4xl font-bold text-[#283061] mb-6"
+              variants={fadeInUp}
+              transition={{ duration: 0.6 }}
+            >
+              App Screenshots
+            </motion.h3>
+            <motion.p 
+              className="text-xl text-[#283061]"
+              variants={fadeInUp}
+              transition={{ duration: 0.6 }}
+            >
+              Take a look at our intuitive and user-friendly interface
+            </motion.p>
+          </motion.div>
+          <motion.div 
+            className="grid md:grid-cols-4 gap-8"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
             {['mk1.jpg', 'mk2.jpg', 'mk3.jpg', 'mk4.jpg'].map((image, index) => (
-              <div key={index} >
+              <motion.div 
+                key={index}
+                variants={fadeInUp}
+                transition={{ duration: 0.6 }}
+                whileHover={{ scale: 1.05, y: -10 }}
+              >
                 <Image 
                   src={`/${image}`} 
                   alt={`Marine Knots App Screenshot ${index + 1}`}
                   width={720}
                   height={1464}
-                  className="w-full h-full object-cover rounded-lg"
+                  className="w-full h-full object-cover rounded-lg shadow-lg"
                 />
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Reviews Section */}
       <section id="reviews" className="py-20 px-6 bg-[#283061]">
         <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold text-white mb-6">What Our Users Say</h3>
-            <p className="text-xl text-white">Join thousands of satisfied boaters and sailors</p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+          <motion.div 
+            className="text-center mb-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.h3 
+              className="text-4xl font-bold text-white mb-6"
+              variants={fadeInUp}
+              transition={{ duration: 0.6 }}
+            >
+              What Our Users Say
+            </motion.h3>
+            <motion.p 
+              className="text-xl text-white"
+              variants={fadeInUp}
+              transition={{ duration: 0.6 }}
+            >
+              Join thousands of satisfied boaters and sailors
+            </motion.p>
+          </motion.div>
+          <motion.div 
+            className="grid md:grid-cols-2 lg:grid-cols-2 gap-8"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
             {reviews.map((review, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 hover:shadow-lg transition-shadow border-2 border-[#ffc107]">
+              <motion.div 
+                key={index} 
+                className="bg-white rounded-2xl p-8 hover:shadow-lg transition-shadow border-2 border-[#ffc107]"
+                variants={fadeInUp}
+                transition={{ duration: 0.6 }}
+                whileHover={{ scale: 1.02, y: -5 }}
+              >
                 <div className="flex items-center mb-4">
                   <div className="flex text-[#ffc107] mr-4">
                     {[...Array(review.rating)].map((_, i) => (
@@ -212,105 +437,183 @@ const MarineKnotsWebsite = () => {
                   </div>
                   <span className="text-[#283061] font-semibold">{review.name}</span>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Download Section */}
       <section id="download" className="py-20 px-6 bg-[#ffc107]">
-        <div className="container mx-auto text-center">
-          <h3 className="text-4xl font-bold text-[#283061] mb-6">Ready to Master Maritime Knots?</h3>
-          <p className="text-xl text-[#283061] mb-8 max-w-2xl mx-auto">
+        <motion.div 
+          className="container mx-auto text-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+        >
+          <motion.h3 
+            className="text-4xl font-bold text-[#283061] mb-6"
+            variants={fadeInUp}
+            transition={{ duration: 0.6 }}
+          >
+            Ready to Master Maritime Knots?
+          </motion.h3>
+          <motion.p 
+            className="text-xl text-[#283061] mb-8 max-w-2xl mx-auto"
+            variants={fadeInUp}
+            transition={{ duration: 0.6 }}
+          >
             Download our app now and dive into the world of maritime knots with ease and pleasure!
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://apps.apple.com/us/app/marine-knots/id6451214846" className="bg-[#283061] text-white px-8 py-4 rounded-full font-semibold text-lg hover:opacity-90 transition-opacity shadow-lg">
+          </motion.p>
+          <motion.div 
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+            variants={staggerContainer}
+          >
+            <motion.a 
+              href="https://apps.apple.com/us/app/marine-knots/id6451214846" 
+              className="bg-[#283061] text-white px-8 py-4 rounded-full font-semibold text-lg hover:opacity-90 transition-opacity shadow-lg"
+              variants={fadeInUp}
+              transition={{ duration: 0.6 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               Download for iOS
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=com.Noeuds.NoeudsMarins&hl=en_US" className="bg-white text-[#283061] px-8 py-4 rounded-full font-semibold text-lg hover:opacity-90 transition-opacity shadow-lg border-2 border-[#283061]">
+            </motion.a>
+            <motion.a 
+              href="https://play.google.com/store/apps/details?id=com.Noeuds.NoeudsMarins&hl=en_US" 
+              className="bg-white text-[#283061] px-8 py-4 rounded-full font-semibold text-lg hover:opacity-90 transition-opacity shadow-lg border-2 border-[#283061]"
+              variants={fadeInUp}
+              transition={{ duration: 0.6 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               Download for Android
-            </a>
-          </div>
-        </div>
+            </motion.a>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* Legal Section */}
       <section className="py-12 px-6 bg-white">
-        <div className="container mx-auto max-w-4xl">
+        <motion.div 
+          className="container mx-auto max-w-4xl"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+        >
           <div className="space-y-4">
-            <div className="bg-white rounded-xl border-2 border-[#283061] overflow-hidden">
+            <motion.div 
+              className="bg-white rounded-xl border-2 border-[#283061] overflow-hidden"
+              variants={fadeInUp}
+              transition={{ duration: 0.6 }}
+            >
               <button
                 onClick={() => setShowTerms(!showTerms)}
                 className="w-full px-6 py-4 text-left flex items-center justify-between text-[#283061] hover:bg-[#ffc107] transition-colors"
               >
                 <span className="font-semibold">Terms and Conditions</span>
-                {showTerms ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+                <motion.div
+                  animate={{ rotate: showTerms ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <ChevronDown className="w-5 h-5" />
+                </motion.div>
               </button>
-              {showTerms && (
-                <div className="px-6 pb-6 text-[#283061] border-t border-[#283061]">
-                  <div className="space-y-4">
-                    <p>By downloading and using the Marine Knots app, you agree to the following terms:</p>
-                    <ul className="space-y-2 ml-4">
-                      <li>• This app is provided for educational and recreational purposes only</li>
-                      <li>• The developer is not responsible for any accidents, injuries, or damages that may occur from using the information provided in this app</li>
-                      <li>• Users should always exercise proper safety measures when working with ropes and knots</li>
-                      <li>• The app content is provided "as is" without warranty of any kind</li>
-                      <li>• Users are responsible for verifying the appropriateness of any knot for their specific situation</li>
-                      <li>• The developer reserves the right to update or modify the app content at any time</li>
-                    </ul>
-                    <p className="text-sm mt-4">
-                      Always consult with maritime professionals and follow proper safety protocols when on the water.
-                    </p>
+              <motion.div
+                initial={false}
+                animate={{ height: showTerms ? "auto" : 0, opacity: showTerms ? 1 : 0 }}
+                transition={{ duration: 0.3 }}
+                style={{ overflow: "hidden" }}
+              >
+                {showTerms && (
+                  <div className="px-6 pb-6 text-[#283061] border-t border-[#283061]">
+                    <div className="space-y-4">
+                      <p>By downloading and using the Marine Knots app, you agree to the following terms:</p>
+                      <ul className="space-y-2 ml-4">
+                        <li>• This app is provided for educational and recreational purposes only</li>
+                        <li>• The developer is not responsible for any accidents, injuries, or damages that may occur from using the information provided in this app</li>
+                        <li>• Users should always exercise proper safety measures when working with ropes and knots</li>
+                        <li>• The app content is provided "as is" without warranty of any kind</li>
+                        <li>• Users are responsible for verifying the appropriateness of any knot for their specific situation</li>
+                        <li>• The developer reserves the right to update or modify the app content at any time</li>
+                      </ul>
+                      <p className="text-sm mt-4">
+                        Always consult with maritime professionals and follow proper safety protocols when on the water.
+                      </p>
+                    </div>
                   </div>
-                </div>
-              )}
-            </div>
+                )}
+              </motion.div>
+            </motion.div>
 
-            <div className="bg-white rounded-xl border-2 border-[#283061] overflow-hidden">
+            <motion.div 
+              className="bg-white rounded-xl border-2 border-[#283061] overflow-hidden"
+              variants={fadeInUp}
+              transition={{ duration: 0.6 }}
+            >
               <button
                 onClick={() => setShowPrivacy(!showPrivacy)}
                 className="w-full px-6 py-4 text-left flex items-center justify-between text-[#283061] hover:bg-[#ffc107] transition-colors"
               >
                 <span className="font-semibold">Privacy Policy</span>
-                {showPrivacy ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+                <motion.div
+                  animate={{ rotate: showPrivacy ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <ChevronDown className="w-5 h-5" />
+                </motion.div>
               </button>
-              {showPrivacy && (
-                <div className="px-6 pb-6 text-[#283061] border-t border-[#283061]">
-                  <div className="space-y-4">
-                    <p>We respect your privacy and are committed to protecting your personal information.</p>
-                    <div className="space-y-3">
-                      <div>
-                        <h4 className="font-semibold mb-2">Data Collection</h4>
-                        <p>We do not collect any personal data or information from users of the Marine Knots app. The app functions completely offline and does not require or collect any personal information, usage data, or analytics.</p>
+              <motion.div
+                initial={false}
+                animate={{ height: showPrivacy ? "auto" : 0, opacity: showPrivacy ? 1 : 0 }}
+                transition={{ duration: 0.3 }}
+                style={{ overflow: "hidden" }}
+              >
+                {showPrivacy && (
+                  <div className="px-6 pb-6 text-[#283061] border-t border-[#283061]">
+                    <div className="space-y-4">
+                      <p>We respect your privacy and are committed to protecting your personal information.</p>
+                      <div className="space-y-3">
+                        <div>
+                          <h4 className="font-semibold mb-2">Data Collection</h4>
+                          <p>We do not collect any personal data or information from users of the Marine Knots app. The app functions completely offline and does not require or collect any personal information, usage data, or analytics.</p>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold mb-2">Information Storage</h4>
+                          <p>All app data is stored locally on your device. We do not have access to your device or any information stored within the app.</p>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold mb-2">Third-Party Services</h4>
+                          <p>Our app does not integrate with any third-party services that collect user data.</p>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold mb-2">Changes to Privacy Policy</h4>
+                          <p>Any changes to this privacy policy will be reflected in app updates and on this website.</p>
+                        </div>
                       </div>
-                      <div>
-                        <h4 className="font-semibold mb-2">Information Storage</h4>
-                        <p>All app data is stored locally on your device. We do not have access to your device or any information stored within the app.</p>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold mb-2">Third-Party Services</h4>
-                        <p>Our app does not integrate with any third-party services that collect user data.</p>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold mb-2">Changes to Privacy Policy</h4>
-                        <p>Any changes to this privacy policy will be reflected in app updates and on this website.</p>
-                      </div>
+                      <p className="text-sm mt-4">
+                        If you have any questions about our privacy practices, please contact us through the app store.
+                      </p>
                     </div>
-                    <p className="text-sm mt-4">
-                      If you have any questions about our privacy practices, please contact us through the app store.
-                    </p>
                   </div>
-                </div>
-              )}
-            </div>
+                )}
+              </motion.div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#283061] border-t-4 border-[#ffc107] py-8 px-6">
+      <motion.footer 
+        className="bg-[#283061] border-t-4 border-[#ffc107] py-8 px-6"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={fadeInUp}
+        transition={{ duration: 0.6 }}
+      >
         <div className="container mx-auto text-center">
           <div className="flex items-center justify-center space-x-4 mb-4">
             <div className="flex items-center justify-center">
@@ -322,7 +625,7 @@ const MarineKnotsWebsite = () => {
             © 2025 Marine Knots - JdwApps. All rights reserved. Master the art of maritime knots.
           </p>
         </div>
-      </footer>
+      </motion.footer>
 
       {/* Google Fonts Link */}
       <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
