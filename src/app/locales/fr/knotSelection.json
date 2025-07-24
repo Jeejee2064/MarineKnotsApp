@@ -1,0 +1,43 @@
+{
+  "header": {
+    "title": "Nœuds Marins",
+    "backHome": "Retour à l'accueil"
+  },
+  "knots": {
+    "demiCleGanse": {
+      "name": "Demi-Clé à Ganse",
+      "description": "Nœud essentiel pour fixer temporairement un cordage et pouvoir le relarguer rapidement."
+    },
+    "chaise": {
+      "name": "Nœud de Chaise",
+      "description": "Crée une boucle sécurisée qui ne glisse pas sous charge."
+    },
+    "cabestan": {
+      "name": "Nœud de Cabestan",
+      "description": "Parfait pour fixer le parrebattage."
+    },
+    "zeppelin": {
+      "name": "Nœud de Zeppelin",
+      "description": "Nœud solide et fiable pour joindre deux cordages."
+    },
+    "papillonBoucle": {
+      "name": "Nœud Papillon en Boucle",
+      "description": "Crée une boucle sécurisée au milieu d'un cordage."
+    },
+    "tmdc": {
+      "name": "Tour Mort Deux Demi-Clés",
+      "description": "Nœud simple pour les applications d'amarrage à fortes tensions."
+    },
+    "taquet": {
+      "name": "Nœud de Taquet",
+      "description": "Nœud spécialisé pour fixer les cordages aux taquets de bateau."
+    },
+    "huit": {
+      "name": "Nœud de Huit",
+      "description": "Nœud d'arrêt qui empêche le cordage de passer  travers les poulies."
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Nœuds Marins. Maîtrisez l'art des nœuds de voile."
+  }
+}

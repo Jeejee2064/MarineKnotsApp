@@ -1,0 +1,43 @@
+{
+  "header": {
+    "title": "Marine Knots",
+    "backHome": "Back to Home"
+  },
+  "knots": {
+    "demiCleGanse": {
+      "name": "Slip Hitch",
+      "description": "Essential knot for securing lines temporarly to posts and rails."
+    },
+    "chaise": {
+      "name": "Bowline",
+      "description": "Creates a secure loop that won't slip under load."
+    },
+    "cabestan": {
+      "name": "Clove Hitch",
+      "description": "Perfect for securing fenders."
+    },
+    "zeppelin": {
+      "name": "Zeppelin Bend",
+      "description": "Strong and reliable bend for joining two ropes."
+    },
+    "papillonBoucle": {
+      "name": "Butterfly Loop",
+      "description": "Creates a secure loop in the middle of a rope."
+    },
+    "tmdc": {
+      "name": "Round Turn Two Half Hitches",
+      "description": "Simple knot for mooring and strong tension applications."
+    },
+    "taquet": {
+      "name": "Cleat hitch",
+      "description": "Specialized knot for securing lines to boat cleats."
+    },
+    "huit": {
+      "name": "Figure Eight",
+      "description": "Stopper knot that prevents rope from running through blocks."
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Marine Knots. Master the art of sailing knots."
+  }
+}

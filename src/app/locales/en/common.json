@@ -1,0 +1,93 @@
+{
+  "header": {
+    "title": "Marine Knots",
+    "features": "Features",
+    "screenshots": "Screenshots",
+    "reviews": "Reviews",
+    "download": "Download",
+    "testNow": "Test it now!"
+  },
+  "hero": {
+    "title1": "Master the Art of",
+    "title2": "Marine Knots",
+    "description": "Welcome to the world of maritime knots! Don't let the first challenge stop you when it comes to tying knots. With our dedicated 100% offline app for boaters, master over 45 marine knots step-by-step.",
+    "ios": "Download for iOS",
+    "android": "Download for Android"
+  },
+  "features": {
+    "title": "Why Choose Marine Knots?",
+    "description": "Specially designed to help you learn marine knots in an easy and interactive way, with animated instructions and practical scenarios.",
+    "items": [
+      {
+        "title": "45+ Marine Knots",
+        "description": "Learn essential maritime knots with step-by-step animated instructions"
+      },
+      {
+        "title": "Interactive Quizzes",
+        "description": "Test your knowledge with engaging quiz modes and instant feedback"
+      },
+      {
+        "title": "Maritime Scenarios",
+        "description": "Practice with 45+ real-world situations to choose the right knot"
+      },
+      {
+        "title": "100% Offline",
+        "description": "No internet required - perfect for use on the water"
+      }
+    ]
+  },
+  "newFeatures": {
+    "title": "New Features",
+    "items": [
+      {
+        "title": "Quiz Modes",
+        "description": "Test your knowledge with interactive quizzes and get instant feedback"
+      },
+      {
+        "title": "Maritime Scenarios",
+        "description": "Over 45 real-world situations where you choose the right knot"
+      },
+      {
+        "title": "Knot Selection",
+        "description": "Get guidance on choosing the most appropriate knot for your needs"
+      }
+    ]
+  },
+  "screenshots": {
+    "title": "App Screenshots",
+    "description": "Take a look at our intuitive and user-friendly interface"
+  },
+  "reviews": {
+    "title": "What Our Users Say",
+    "description": "Join thousands of satisfied boaters and sailors"
+  },
+  "download": {
+    "title": "Ready to Master Maritime Knots?",
+    "description": "Download our app now and dive into the world of maritime knots with ease and pleasure!"
+  },
+  "legal": {
+    "terms": "Terms and Conditions",
+    "privacy": "Privacy Policy",
+    "termsContent": [
+      "By downloading and using the Marine Knots app, you agree to the following terms:",
+      "• This app is provided for educational and recreational purposes only",
+      "• The developer is not responsible for any accidents, injuries, or damages that may occur from using the information provided in this app",
+      "• Users should always exercise proper safety measures when working with ropes and knots",
+      "• The app content is provided \"as is\" without warranty of any kind",
+      "• Users are responsible for verifying the appropriateness of any knot for their specific situation",
+      "• The developer reserves the right to update or modify the app content at any time",
+      "Always consult with maritime professionals and follow proper safety protocols when on the water."
+    ],
+    "privacyContent": [
+      "We respect your privacy and are committed to protecting your personal information.",
+      "Data Collection: We do not collect any personal data or information from users of the Marine Knots app. The app functions completely offline and does not require or collect any personal information, usage data, or analytics.",
+      "Information Storage: All app data is stored locally on your device. We do not have access to your device or any information stored within the app.",
+      "Third-Party Services: Our app does not integrate with any third-party services that collect user data.",
+      "Changes to Privacy Policy: Any changes to this privacy policy will be reflected in app updates and on this website.",
+      "If you have any questions about our privacy practices, please contact us through the app store."
+    ]
+  },
+  "footer": {
+    "copyright": "© 2025 Marine Knots - JdwApps. All rights reserved. Master the art of maritime knots."
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "header": {
+    "title": "Nœuds Marins",
+    "features": "Fonctionnalités",
+    "screenshots": "Captures d'écran",
+    "reviews": "Avis",
+    "download": "Télécharger",
+    "testNow": "Essayez maintenant !"
+  },
+  "hero": {
+    "title1": "Maîtrisez l'Art des",
+    "title2": "Nœuds Marins",
+    "description": "Bienvenue dans le monde des nœuds marins ! Ne laissez pas le premier défi vous arrêter lorsqu'il s'agit de faire des nœuds. Avec notre application dédiée 100% hors ligne pour les plaisanciers, maîtrisez plus de 45 nœuds marins étape par étape.",
+    "ios": "Télécharger pour iOS",
+    "android": "Télécharger pour Android"
+  },
+  "features": {
+    "title": "Pourquoi choisir Nœuds Marins ?",
+    "description": "Spécialement conçue pour vous aider à apprendre les nœuds marins de manière simple et interactive, avec des instructions animées et des scénarios pratiques.",
+    "items": [
+      {
+        "title": "45+ Nœuds Marins",
+        "description": "Apprenez les nœuds marins essentiels avec des instructions animées étape par étape"
+      },
+      {
+        "title": "Quiz Interactifs",
+        "description": "Testez vos connaissances avec des quiz engageants et des retours instantanés"
+      },
+      {
+        "title": "Scénarios Maritimes",
+        "description": "Pratiquez avec plus de 45 situations réelles pour choisir le bon nœud"
+      },
+      {
+        "title": "100% Hors Ligne",
+        "description": "Aucune connexion internet requise - parfait pour une utilisation sur l'eau"
+      }
+    ]
+  },
+  "newFeatures": {
+    "title": "Nouvelles Fonctionnalités",
+    "items": [
+      {
+        "title": "Modes Quiz",
+        "description": "Testez vos connaissances avec des quiz interactifs et obtenez des retours instantanés"
+      },
+      {
+        "title": "Scénarios Maritimes",
+        "description": "Plus de 45 situations réelles où vous choisissez le bon nœud"
+      },
+      {
+        "title": "Sélection de Nœuds",
+        "description": "Obtenez des conseils pour choisir le nœud le plus approprié à vos besoins"
+      }
+    ]
+  },
+  "screenshots": {
+    "title": "Captures d'écran",
+    "description": "Découvrez notre interface intuitive et conviviale"
+  },
+  "reviews": {
+    "title": "Ce que disent nos utilisateurs",
+    "description": "Rejoignez des milliers de plaisanciers et marins satisfaits"
+  },
+  "download": {
+    "title": "Prêt à maîtriser les nœuds marins ?",
+    "description": "Téléchargez notre application maintenant et plongez dans le monde des nœuds marins avec facilité et plaisir !"
+  },
+  "legal": {
+    "terms": "Conditions générales",
+    "privacy": "Politique de confidentialité",
+    "termsContent": [
+      "En téléchargeant et en utilisant l'application Nœuds Marins, vous acceptez les conditions suivantes :",
+      "• Cette application est fournie uniquement à des fins éducatives et récréatives",
+      "• Le développeur n'est pas responsable des accidents, blessures ou dommages qui pourraient survenir lors de l'utilisation des informations fournies dans cette application",
+      "• Les utilisateurs doivent toujours prendre des mesures de sécurité appropriées lorsqu'ils travaillent avec des cordes et des nœuds",
+      "• Le contenu de l'application est fourni \"tel quel\" sans garantie d'aucune sorte",
+      "• Les utilisateurs sont responsables de vérifier l'adéquation de tout nœud à leur situation spécifique",
+      "• Le développeur se réserve le droit de mettre à jour ou de modifier le contenu de l'application à tout moment",
+      "Consultez toujours des professionnels maritimes et suivez les protocoles de sécurité appropriés lorsque vous êtes sur l'eau."
+    ],
+    "privacyContent": [
+      "Nous respectons votre vie privée et nous engageons à protéger vos informations personnelles.",
+      "Collecte de données : Nous ne collectons aucune donnée ou information personnelle des utilisateurs de l'application Nœuds Marins. L'application fonctionne entièrement hors ligne et ne nécessite ni ne collecte aucune information personnelle, donnée d'utilisation ou analyse.",
+      "Stockage des informations : Toutes les données de l'application sont stockées localement sur votre appareil. Nous n'avons pas accès à votre appareil ni aux informations stockées dans l'application.",
+      "Services tiers : Notre application n'intègre aucun service tiers qui collecte des données utilisateur.",
+      "Modifications de la politique de confidentialité : Toute modification de cette politique de confidentialité sera reflétée dans les mises à jour de l'application et sur ce site web.",
+      "Si vous avez des questions sur nos pratiques de confidentialité, veuillez nous contacter via l'app store."
+    ]
+  },
+  "footer": {
+    "copyright": "© 2025 Nœuds Marins - JdwApps. Tous droits réservés. Maîtrisez l'art des nœuds marins."
+  }
+}
