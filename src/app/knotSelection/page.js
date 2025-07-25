@@ -9,7 +9,7 @@ import LanguageSwitcher from '../components/LanguageSwitcher';
 
 const KnotSelectionPage = () => {
   const { language } = useLanguage();
-  
+
   // Load translations based on current language
   const translations = require(`../locales/${language}/knotSelection.json`);
 
@@ -87,10 +87,10 @@ const KnotSelectionPage = () => {
       <header className="bg-[#283061] sticky top-0 z-50 p-4 shadow-md">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center">
-            <Image 
-              src="/icon.png" 
-              alt="Marine Knots Logo" 
-              width={40} 
+            <Image
+              src="/icon.png"
+              alt="Marine Knots Logo"
+              width={40}
               height={40}
               className="rounded-full"
             />
@@ -98,15 +98,15 @@ const KnotSelectionPage = () => {
           </div>
           <div className="flex items-center gap-4">
             <LanguageSwitcher />
-<Link 
-  href="/" 
-  className="flex items-center bg-[#ffc107] text-[#283061] px-3 py-2 sm:px-4 rounded-full hover:bg-[#ffd54f] transition-colors"
->
-  <Home className="w-4 h-4 sm:mr-2" />
-  <span className="hidden sm:inline text-sm font-medium">
-    {translations.header.backHome}
-  </span>
-</Link>
+            <Link
+              href="/"
+              className="flex items-center bg-[#ffc107] text-[#283061] px-3 py-2 sm:px-4 rounded-full hover:bg-[#ffd54f] transition-colors"
+            >
+              <Home className="w-4 h-4 sm:mr-2" />
+              <span className="hidden sm:inline text-sm font-medium">
+                {translations.header.backHome}
+              </span>
+            </Link>
           </div>
         </div>
       </header>
@@ -159,7 +159,7 @@ const KnotSelectionPage = () => {
           </p>
         </div>
       </footer>
-            <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
 
     </div>
   );

@@ -5,7 +5,7 @@
   },
   "knots": {
     "demiCleGanse": {
-      "name": "Demi-Clé à Ganse",
+      "name": "Demi-Clé Gansée",
       "description": "Nœud essentiel pour fixer temporairement un cordage et pouvoir le relarguer rapidement."
     },
     "chaise": {
@@ -21,7 +21,7 @@
       "description": "Nœud solide et fiable pour joindre deux cordages."
     },
     "papillonBoucle": {
-      "name": "Nœud Papillon en Boucle",
+      "name": "Papillon Alpin",
       "description": "Crée une boucle sécurisée au milieu d'un cordage."
     },
     "tmdc": {
@@ -38,6 +38,6 @@
     }
   },
   "footer": {
-    "copyright": "© 2025 Nœuds Marins. Maîtrisez l'art des nœuds de voile."
+    "copyright": "© 2025 Nœuds Marins - JdwApps - Tous droits réservés."
   }
 }

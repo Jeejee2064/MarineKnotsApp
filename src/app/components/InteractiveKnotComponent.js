@@ -5,12 +5,17 @@ const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 import { useSpring } from '@react-spring/web';
 import { Range, getTrackBackground } from 'react-range';
 import { motion, AnimatePresence } from 'framer-motion';
+import LanguageSwitcher from './LanguageSwitcher';
+import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
+import Image from 'next/image';
 
 const InteractiveKnotComponent = ({
   animationData,
   title,
   stepMessages,
   modalContent,
+  buttonTexts,
   primaryColor = "#FFC107",
   backgroundColor = "#283061"
 }) => {
@@ -103,6 +108,33 @@ const InteractiveKnotComponent = ({
       className="min-h-screen w-screen p-4 text-white flex flex-col"
       style={{ backgroundColor }}
     >
+      {/* Header */}
+      <header className="bg-[#283061] sticky top-0 z-50 p-4 shadow-md">
+        <div className="container mx-auto flex justify-between items-center">
+          <div className="flex items-center">
+            <Image
+              src="/icon.png"
+              alt="Marine Knots Logo"
+              width={40}
+              height={40}
+              className="rounded-full"
+            />
+            <h1 className="text-xl text-white ml-3 font-bold" style={{ fontFamily: 'Pacifico, cursive' }}> </h1>
+          </div>
+          <div className="flex items-center gap-4">
+            <LanguageSwitcher />
+            <Link
+              href="/knotSelection"
+              className="flex items-center bg-[#ffc107] text-[#283061] px-3 py-2 sm:px-4 rounded-full hover:bg-[#ffd54f] transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4 sm:mr-2" />
+
+            </Link>
+          </div>
+        </div>
+      </header>
+
+
       <h1 className="text-center text-white font-bold mb-4" style={{ fontSize: '2rem' }}>
         {title}
       </h1>
@@ -235,14 +267,74 @@ const InteractiveKnotComponent = ({
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Use & Features
+                {buttonTexts.useFeatures}
               </motion.button>
             </motion.div>
           )}
         </AnimatePresence>
       </div>
+      <AnimatePresence>
+        {isModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 h-screen flex items-center justify-center"
+            style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
+          >
+            <motion.div
+              initial={{ scale: 0.5, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.5, opacity: 0 }}
+              className="p-8 rounded-lg overflow-y-auto"
+              style={{ backgroundColor }}
+            >
+              <div className="mx-auto flex flex-col md:flex-row md:justify-between md:items-center space-y-4 md:space-y-0">
+                <div className="flex flex-col items-center justify-center space-y-2 md:w-1/2">
+                  <span className="text-xl font-bold mb-2 text-center text-white">
+                    {title}
+                  </span>
+                  <div className="flex items-center justify-center bg-white rounded-full p-4" style={{ border: `8px solid ${primaryColor}` }}>
+                    <Lottie
+                      lottieRef={modalLottieRef}
+                      animationData={animationData}
+                      autoplay={false}
+                      loop={false}
+                      className="h-[20vh] w-[20vh] md:h-[50vh] md:w-[50vh]"
+                      style={{ clipPath: 'inset(0 0 20% 0)' }}
+                    />
+                  </div>
+                </div>
 
-      {/* Modal stays unchanged */}
+                <div className="flex flex-col space-y-4 md:w-1/2">
+                  {modalContent.sections.map((section, index) => (
+                    <div key={index} className="rounded-lg">
+                      <h3 className="text-l font-semibold mb-1" style={{ color: primaryColor }}>
+                        {section.title}
+                      </h3>
+                      <ul className="list-inside text-white text-sm">
+                        {section.items.map((item, itemIndex) => (
+                          <li key={itemIndex}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+
+                  <motion.button
+                    onClick={() => setIsModalOpen(false)}
+                    className="mt-2 w-full px-6 py-3 rounded-lg font-medium"
+                    style={{ backgroundColor: primaryColor, color: backgroundColor }}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    {buttonTexts.close}
+                  </motion.button>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

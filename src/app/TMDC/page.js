@@ -1,48 +1,99 @@
+'use client'
 import InteractiveKnotComponent from '../components/InteractiveKnotComponent';
 import roundTurnTwoHalfHitchesAnimation from '../animations/TMDC.json';
+import { useLanguage } from '../context/LanguageContext';
 
 const RoundTurnTwoHalfHitchesPage = () => {
-  const stepMessages = [
-    "Pass the working end over the object.",
-    "Make a turn around the object.",
-    "Make the first half-hitch by passing the working end over the standing part.",
-    "Make the second half-hitch by passing the working end under the standing part.",
-    "Tighten the knot by pulling the standing part and the working end."
-  ];
+  const { language } = useLanguage();
 
-  const modalContent = {
-    sections: [
-      {
-        title: "Uses",
-        items: [
-          "Moor a rope under tension."
-        ]
+  // Bilingual content
+  const content = {
+    en: {
+      title: "Round Turn Two Half Hitches",
+      steps: [
+        "Pass the working end over the object.",
+        "Make a turn around the object.",
+        "Make the first half-hitch by passing the working end over the standing part.",
+        "Make the second half-hitch by passing the working end under the standing part.",
+        "Tighten the knot by pulling the standing part and the working end."
+      ],
+      buttonTexts: {
+        useFeatures: "Use & Features",
+        close: "Close"
       },
-      {
-        title: "Characteristics",
-        items: [
-          "This knot is secure, strong, and remains easy to undo."
-        ]
-      },
-      {
-        title: "Advice",
-        items: [
-          "Make the first half-hitch in one direction and the second in the opposite direction, so the tightened half-hitches resemble a cow hitch."
+      modal: {
+        sections: [
+          {
+            title: "Uses",
+            items: [
+              "Moor a rope under tension."
+            ]
+          },
+          {
+            title: "Characteristics",
+            items: [
+              "This knot is secure, strong, and remains easy to undo."
+            ]
+          },
+          {
+            title: "Advice",
+            items: [
+              "Make the first half-hitch in one direction and the second in the opposite direction, so the tightened half-hitches resemble a cow hitch."
+            ]
+          }
         ]
       }
-    ]
+    },
+    fr: {
+      title: "Tour Mort et Deux Demi-Clés",
+      steps: [
+        "Passer le courant par dessus l'attache.",
+        "Faire un tour mort autour de l'attache.",
+        "Réaliser une première demi-clé en commençant par passer le courant par dessus le dormant.",
+        "Réaliser une seconde demi-clé en commençant par passer le courant par dessous le dormant.",
+        "Finaliser le noeud en tirant sur le dormant."
+      ],
+      buttonTexts: {
+        useFeatures: "Utilisation & Caractéristiques",
+        close: "Fermer"
+      },
+      modal: {
+        sections: [
+          {
+            title: "Utilisations",
+            items: [
+              "Amarrer un cordage sous tension."
+            ]
+          },
+          {
+            title: "Caractéristiques",
+            items: [
+              "Ce noeud est sûr, solide et reste facile à défaire."
+            ]
+          },
+          {
+            title: "Conseils",
+            items: [
+              "Réaliser la première demi-clé dans un sens et la deuxième dans le sens inverse, au final les demi-clés serrées doivent ressembler à un noeud d'alouette."
+            ]
+          }
+        ]
+      }
+    }
   };
+
+  const t = content[language];
 
   return (
     <div>
       <InteractiveKnotComponent
         animationData={roundTurnTwoHalfHitchesAnimation}
-        title="Round Turn Two Half Hitches"
-        stepMessages={stepMessages}
-        modalContent={modalContent}
+        title={t.title}
+        stepMessages={t.steps}
+        modalContent={t.modal}
+        buttonTexts={t.buttonTexts}
         primaryColor="#FFC107"
         backgroundColor="#283061"
-        numberOfSteps={5}
       />
     </div>
   );

@@ -230,20 +230,30 @@ const MarineKnotsWebsite = () => {
                 />
               </motion.a>
             </motion.div>
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={staggerContainer}
-            >
-              <button
-                onClick={() => router.push('/knotSelection')}
-                className="bg-[#ffc107] hover:scale-105
- text-black font-semibold py-3 px-6 mt-8 rounded-full shadow hover:brightness-105 transition duration-200"
-              >
-                {translations.header.testNow}
-              </button>
-            </motion.div>
+<motion.div
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, margin: "-50px" }}  // Adjusted margin for better detection
+  variants={{
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  }}
+  className="mt-8 flex justify-center"
+>
+  <motion.button
+    onClick={() => router.push('/knotSelection')}
+    className="bg-[#ffc107] hover:scale-105 text-black font-semibold py-3 px-6 rounded-full shadow hover:brightness-105 transition duration-200"
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+  >
+    {translations.header.testNow}
+  </motion.button>
+</motion.div>
+
           </div>
         </div>
       </section>
