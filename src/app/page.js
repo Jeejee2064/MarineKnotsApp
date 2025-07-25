@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useLanguage } from './context/LanguageContext';
 import LanguageSwitcher from './components/LanguageSwitcher';
-import LegalSection from './components/LegalSection';
 
 const MarineKnotsWebsite = () => {
   const [showTerms, setShowTerms] = useState(false);
@@ -191,46 +190,60 @@ const MarineKnotsWebsite = () => {
                 {translations.hero.description}
               </motion.p>
             </motion.div>
-<motion.div
-  className="flex flex-col sm:flex-row gap-6 justify-center items-center"
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true, margin: "-100px" }}
-  variants={staggerContainer}
->
-  <motion.a
-    href="https://apps.apple.com/us/app/marine-knots/id6451214846"
-    className="hover:opacity-90 transition-opacity"
-    variants={fadeInUp}
-    transition={{ duration: 0.6 }}
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}
-  >
-    <Image 
-      src="/appstore.png" 
-      alt={translations.hero.ios}
-      width={160}
-      height={54}
-      className="h-[54px] w-auto"
-    />
-  </motion.a>
-  <motion.a
-    href="https://play.google.com/store/apps/details?id=com.Noeuds.NoeudsMarins&hl=en_US"
-    className="hover:opacity-90 transition-opacity"
-    variants={fadeInUp}
-    transition={{ duration: 0.6 }}
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}
-  >
-    <Image 
-      src="/googleplay.png" 
-      alt={translations.hero.android}
-      width={160}
-      height={54}
-      className="h-[54px] w-auto"
-    />
-  </motion.a>
-</motion.div>
+            <motion.div
+              className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={staggerContainer}
+            >
+              <motion.a
+                href="https://apps.apple.com/us/app/marine-knots/id6451214846"
+                className="hover:opacity-90 transition-opacity"
+                variants={fadeInUp}
+                transition={{ duration: 0.6 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Image
+                  src="/appstore.png"
+                  alt={translations.hero.ios}
+                  width={160}
+                  height={54}
+                  className="h-[54px] w-auto"
+                />
+              </motion.a>
+              <motion.a
+                href="https://play.google.com/store/apps/details?id=com.Noeuds.NoeudsMarins&hl=en_US"
+                className="hover:opacity-90 transition-opacity"
+                variants={fadeInUp}
+                transition={{ duration: 0.6 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Image
+                  src="/googleplay.png"
+                  alt={translations.hero.android}
+                  width={160}
+                  height={54}
+                  className="h-[54px] w-auto"
+                />
+              </motion.a>
+            </motion.div>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={staggerContainer}
+            >
+              <button
+                onClick={() => router.push('/knotSelection')}
+                className="bg-[#ffc107] hover:scale-105
+ text-black font-semibold py-3 px-6 mt-8 rounded-full shadow hover:brightness-105 transition duration-200"
+              >
+                {translations.header.testNow}
+              </button>
+            </motion.div>
           </div>
         </div>
       </section>

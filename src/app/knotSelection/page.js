@@ -98,13 +98,15 @@ const KnotSelectionPage = () => {
           </div>
           <div className="flex items-center gap-4">
             <LanguageSwitcher />
-            <Link 
-              href="/" 
-              className="flex items-center bg-[#ffc107] text-[#283061] px-4 py-2 rounded-full hover:bg-[#ffd54f] transition-colors"
-            >
-              <Home className="w-4 h-4 mr-2" />
-              <span className="text-sm font-medium">{translations.header.backHome}</span>
-            </Link>
+<Link 
+  href="/" 
+  className="flex items-center bg-[#ffc107] text-[#283061] px-3 py-2 sm:px-4 rounded-full hover:bg-[#ffd54f] transition-colors"
+>
+  <Home className="w-4 h-4 sm:mr-2" />
+  <span className="hidden sm:inline text-sm font-medium">
+    {translations.header.backHome}
+  </span>
+</Link>
           </div>
         </div>
       </header>
