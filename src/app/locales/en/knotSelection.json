@@ -6,7 +6,7 @@
   "knots": {
     "demiCleGanse": {
       "name": "Slip Hitch",
-      "description": "Essential knot for securing lines temporarly to posts and rails."
+      "description": "Essential knot for securing lines temporarily to posts and rails."
     },
     "chaise": {
       "name": "Bowline",
@@ -29,7 +29,7 @@
       "description": "Simple knot for mooring and strong tension applications."
     },
     "taquet": {
-      "name": "Cleat hitch",
+      "name": "Cleat Hitch",
       "description": "Specialized knot for securing lines to boat cleats."
     },
     "huit": {
@@ -37,7 +37,35 @@
       "description": "Stopper knot that prevents rope from running through blocks."
     }
   },
+  "features": {
+    "title": "Discover All Features",
+    "description": "The full app offers much more than this demo!",
+    "items": [
+      {
+        "title": "Animated Tutorials",
+        "description": "Learn each knot step-by-step with smooth animations"
+      },
+      {
+        "title": "Smart Search",
+        "description": "Find the perfect knot for every marine situation"
+      },
+      {
+        "title": "Quizzes & scenarios",
+        "description": "Grow from novice to expert by identifying knots and applying them to real sailing situations"
+      },
+      {
+        "title": "Offline Mode",
+        "description": "Available at sea even without internet connection"
+      }
+    ]
+  },
+  "download": {
+    "title": "Download the Full App",
+    "description": "Available on iOS and Android",
+    "ios": "Get on the App Store",
+    "android": "Get on Google Play"
+  },
   "footer": {
-    "copyright": "© 2025 Marine Knots. Master the art of sailing knots."
+    "copyright": "© 2025 Marine Knots - JdwApps - All rights reserved."
   }
 }

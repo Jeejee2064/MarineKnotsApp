@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useLanguage } from '../context/LanguageContext';
 import LanguageSwitcher from '../components/LanguageSwitcher';
+import { BookOpen, Target, CircleQuestionMark, Anchor } from 'lucide-react';
 
 const KnotSelectionPage = () => {
   const { language } = useLanguage();
@@ -150,9 +151,119 @@ const KnotSelectionPage = () => {
           ))}
         </motion.div>
       </main>
+      <img src='/separator2.svg' className='w-screen mt-[3%] bg-white' />
+
+      {/* Features & Download Section */}
+      <section className="py-20 px-6 bg-white">
+        <div className="container mx-auto">
+          <motion.div
+            className="text-center mb-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+          >
+            <motion.h3
+              className="text-4xl font-bold text-[#283061] mb-6"
+              variants={fadeInUp}
+            >
+              {translations.features.title}
+            </motion.h3>
+            <motion.p
+              className="text-xl text-[#283061] max-w-3xl mx-auto"
+              variants={fadeInUp}
+            >
+              {translations.features.description}
+            </motion.p>
+          </motion.div>
+
+          <motion.div
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+          >
+            {translations.features.items.map((item, index) => (
+              <motion.div
+                key={index}
+                className="bg-white rounded-2xl p-6 text-center hover:shadow-lg transition-shadow border-2 border-[#ffc107]"
+                variants={fadeInUp}
+                whileHover={{ scale: 1.03, y: -5 }}
+              >
+                <div className="text-[#ffc107] mb-4 flex justify-center">
+                  {index === 0 ? <BookOpen className="w-8 h-8" /> :
+                    index === 1 ? <Target className="w-8 h-8" /> :
+                      index === 2 ? <CircleQuestionMark className="w-8 h-8" /> :
+                        <Anchor className="w-8 h-8" />}
+                </div>
+                <h4 className="text-xl font-semibold text-[#283061] mb-4">{item.title}</h4>
+                <p className="text-[#283061]">{item.description}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.div
+            className="text-center"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+          >
+            <motion.h3
+              className="text-3xl font-bold text-[#283061] mb-6"
+              variants={fadeInUp}
+            >
+              {translations.download.title}
+            </motion.h3>
+            <motion.p
+              className="text-xl text-[#283061] mb-8 max-w-2xl mx-auto"
+              variants={fadeInUp}
+            >
+              {translations.download.description}
+            </motion.p>
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              variants={staggerContainer}
+            >
+              <motion.a
+                href="https://apps.apple.com/us/app/marine-knots/id6451214846"
+                className="flex justify-center"
+                variants={fadeInUp}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Image
+                  src="/appstore.png"
+                  alt={translations.download.ios}
+                  width={180}
+                  height={60}
+                  className="h-[50px] w-auto sm:h-[60px]"
+                />
+              </motion.a>
+              <motion.a
+                href="https://play.google.com/store/apps/details?id=com.Noeuds.NoeudsMarins&hl=en_US"
+                className="flex justify-center"
+                variants={fadeInUp}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Image
+                  src="/googleplay.png"
+                  alt={translations.download.android}
+                  width={180}
+                  height={60}
+                  className="h-[50px] w-auto sm:h-[60px]"
+                />
+              </motion.a>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+            <img src='/separator3.svg' className='w-screen  bg-white' />
 
       {/* Footer */}
-      <footer className="bg-[#283061] text-white text-center py-6 border-t-4 border-[#ffc107]">
+      <footer className="bg-[#283061] text-white text-center py-6 ">
         <div className="container mx-auto">
           <p className="text-sm">
             {translations.footer.copyright}

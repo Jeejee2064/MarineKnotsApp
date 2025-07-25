@@ -37,6 +37,34 @@
       "description": "Nœud d'arrêt qui empêche le cordage de passer  travers les poulies."
     }
   },
+  "features": {
+    "title": "Découvrez toutes les fonctionnalités",
+    "description": "L'application complète offre bien plus que cette démo !",
+    "items": [
+      {
+        "title": "Tutoriels Animés",
+        "description": "Apprenez chaque nœud étape par étape avec des animations fluides"
+      },
+      {
+        "title": "Recherche Intelligente",
+        "description": "Trouvez le nœud parfait pour chaque situation marine"
+      },
+      {
+        "title": "Quiz et Scénarios",
+        "description": " Progressez de novice à expert en identifiant les nœuds et en les appliquant à des situations réelles de navigation"
+      },
+      {
+        "title": "Mode Hors Ligne",
+        "description": "Disponible en mer même sans connexion internet"
+      }
+    ]
+  },
+  "download": {
+    "title": "Téléchargez l'application complète",
+    "description": "Disponible sur iOS et Android",
+    "ios": "Disponible sur l'App Store",
+    "android": "Disponible sur Google Play"
+  },
   "footer": {
     "copyright": "© 2025 Nœuds Marins - JdwApps - Tous droits réservés."
   }
