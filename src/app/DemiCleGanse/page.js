@@ -11,11 +11,11 @@ const SlipHitchPage = () => {
     en: {
       title: "Slip Hitch",
       steps: [
-        "Pass the rope behind the anchor point.",
+        "Pass the rope behind then over the anchor point.",
         "Pass the working end behind the standing part.",
-        "Bring the working end over the standing part and through the loop formed.",
-        "Pull the working end out of the loop again.",
-        "Tighten by pulling both the working end and the loop."
+        "Start forming a bight on the working end.",
+        "Pull this bight inside the previously formed loop.",
+        "Tighten by pulling both the working end and the bight."
       ],
       buttonTexts: {
         useFeatures: "Use & Features",
@@ -47,10 +47,10 @@ const SlipHitchPage = () => {
     fr: {
       title: "Demi-Clé Gansée",
       steps: [
-        "Passer le cordage par derrière le point d'ancrage.",
+        "Passer le cordage par derrière puis par dessus le point d'ancrage.",
         "Passer le courant derrière le dormant.",
-        "Passer courant par dessus le dormant et à l'intérieur de la boucle formée.",
-        "Repasser le courant en dehors de la boucle.",
+        "Formee une ganse sur le courant.",
+        "Passe la ganse dans la boucle.",
         "Serrer en tirant sur le courant et la boucle."
       ],
       buttonTexts: {

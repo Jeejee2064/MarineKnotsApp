@@ -11,10 +11,10 @@ const ZeppelinBendPage = () => {
     en: {
       title: "Zeppelin Bend",
       steps: [
-        "Make a loop with each of the ropes, making sure the red working end passes over and the blue working end passes under.",
-        "Pass the blue working end over the red rope and the red working end under the blue rope.",
-        "The red working end passes under itself, and the blue working end goes over.",
-        "The red working end goes over the blue rope, and the blue working end goes under the red rope.",
+        "Cross each ropes twice, making sure that the yellow one is over the blue one.",
+        "Make a loop with each rope, be carefule the yellow working end passes over itself and the blue one under itself.",
+        "Pass the yellow end in the central aperture from below and the blue end from above.",
+        "Finish passing both ends, they should now be on opposite sides.",
         "Tighten by pulling all four ends."
       ],
       buttonTexts: {
@@ -47,11 +47,11 @@ const ZeppelinBendPage = () => {
     fr: {
       title: "Nœud de Zeppelin",
       steps: [
-        "Faire une boucle avec chacun des cordages, attention le courant rouge passe au-dessus, le courant bleu en dessous.",
-        "Passer le courant bleu par-dessus le cordage rouge, le courant rouge par-dessous le cordage bleu.",
-        "Le courant rouge passe en dessous de lui-même, le bleu au-dessus.",
-        "Le courant rouge passe au-dessus du cordage bleu, le bleu passe en dessous du rouge.",
-        "Serrer en tirant sur les quatre brins."
+"Croisez chaque cordage deux fois, en veillant à ce que le jaune passe au-dessus du bleu.",
+"Faites une boucle avec chaque cordage, en faisant attention à ce que le courant jaune passe au-dessus de son dormant et que le bleu passe en dessous.",
+"Passez le courant jaune dans l'ouverture centrale par en dessous et le bleu par au-dessus.",
+"Terminez de passer les deux courants, ils doivent maintenant se trouver sur les côtés opposés.",
+"Serrez en tirant sur les quatre brins."
       ],
       buttonTexts: {
         useFeatures: "Utilisation & Caractéristiques",
