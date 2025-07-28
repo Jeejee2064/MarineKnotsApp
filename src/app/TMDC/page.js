@@ -14,7 +14,7 @@ const RoundTurnTwoHalfHitchesPage = () => {
         "Pass the working end over the object.",
         "Make a turn around the object.",
         "Make the first half-hitch by passing the working end over the standing part.",
-        "Make the second half-hitch by passing the working end under the standing part.",
+        "Make the second half-hitch the same way you made the first one.",
         "Tighten the knot by pulling the standing part and the working end."
       ],
       buttonTexts: {
@@ -38,7 +38,7 @@ const RoundTurnTwoHalfHitchesPage = () => {
           {
             title: "Advice",
             items: [
-              "Make the first half-hitch in one direction and the second in the opposite direction, so the tightened half-hitches resemble a cow hitch."
+              "Make the first half-hitch in one direction and the second in the same direction."
             ]
           }
         ]
@@ -50,7 +50,7 @@ const RoundTurnTwoHalfHitchesPage = () => {
         "Passer le courant par dessus l'attache.",
         "Faire un tour mort autour de l'attache.",
         "Réaliser une première demi-clé en commençant par passer le courant par dessus le dormant.",
-        "Réaliser une seconde demi-clé en commençant par passer le courant par dessous le dormant.",
+        "Réaliser une seconde demi-clé dans le même sens.",
         "Finaliser le noeud en tirant sur le dormant."
       ],
       buttonTexts: {
@@ -74,7 +74,7 @@ const RoundTurnTwoHalfHitchesPage = () => {
           {
             title: "Conseils",
             items: [
-              "Réaliser la première demi-clé dans un sens et la deuxième dans le sens inverse, au final les demi-clés serrées doivent ressembler à un noeud d'alouette."
+              "Réaliser la première demi-clé dans un sens et la deuxième dans le même sens."
             ]
           }
         ]
